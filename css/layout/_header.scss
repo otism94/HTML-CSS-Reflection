@@ -53,6 +53,9 @@ header {
         max-width: 345px;
         margin-bottom: auto;
     }
+    @include mq('md') {
+        max-width: 374.16px;
+    }
 }
 
 /* All the nav items that aren't in the drop-down nav bar */
@@ -110,6 +113,7 @@ header {
     }
 }
 
+/* Search bar for sm and lg viewports */
 .nav-search {
     height: 56px;
     position: relative;
@@ -119,6 +123,7 @@ header {
         margin-left: 1px;
     }
     input[type="search"] {
+        width: 174px;
         height: 100%;
         position: absolute;
         top: 0;
@@ -134,13 +139,8 @@ header {
             border: 1px solid rgb(91,192,222);
             box-shadow: 0px 0px 8px rgba(91,192,222,.6);
         }
-        @include mq('xs') {
-            width: 174px;
-        }
-        @include mq('md') {
-            visibility: hidden;
-            width: 300px;
-            margin-left: -300px;
+        &::placeholder {
+            color: rgba(102, 102, 102, .75);
         }
     }
     @include mq('xs') {
@@ -152,7 +152,79 @@ header {
         width: 237px;
     }
     @include mq('md') {
-        width: 63px;
+        display: none;
+    }
+}
+
+/* Toggleable search bar for md viewports */
+.nav-search-md {
+    display: none;
+    width: 400px;
+    align-items: center;
+    position: relative;
+    @include mq('md') {
+        display: flex;
+    }
+    @include mq('lg') {
+        display: none;
+    }
+    #search-toggle {
+        display: none;
+    }
+    .buttons {
+        display: flex;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 1s;
+    }
+    .search-bar {
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 1s;
+        position: absolute;
+        left: 37px;
+        width: 300px;
+        input[type="search"] {
+            width: 100%;
+            height: 56px;
+            border: 1px solid $accent;
+            border-radius: 2px;
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            transition: border .15s ease-in-out, box-shadow .15s ease-in-out;
+            padding: 5px 15px;
+            font-size: 14px;
+            color: $primary-grey;
+            &:focus {
+                outline: none;
+                border: 1px solid rgb(91,192,222);
+                box-shadow: 0px 0px 8px rgba(91,192,222,.6);
+            }
+            &::placeholder {
+                color: rgba(102, 102, 102, .75);
+            }
+        }
+    }
+    .btn-toggle {
+        position: absolute;
+        top: 0;
+        left: 163px;
+        height: 56px;
+        .fas {
+            color: $white;
+            font-size: 23px;
+            margin-left: 1px;
+        }
+    }
+    #search-toggle:checked {
+        ~ .buttons {
+            visibility: hidden;
+            opacity: 0;
+        }
+        ~ .search-bar {
+            display: inline-block;
+            visibility: visible;
+            opacity: 1;
+        }
     }
 }
 
@@ -160,7 +232,7 @@ header {
 .nav-support,
 .nav-contact {
     display: none;
-    @include mq('md') {
+    @include mq('lg') {
         display: inline-block;
     }
 }
@@ -174,7 +246,7 @@ header {
     max-height: 56px;
     align-items: center;
     margin-left: 20px;
-    padding: 3.5px 14.215px 7.5px; // no idea don't ask
+    padding: 3.5px 14.215px 7.5px; // no idea
     background-color: $btn-dark;
     color: $white;
     font-size: .75rem;
@@ -233,7 +305,7 @@ header {
                 outline: none;
             }
             &::placeholder {
-                color: rgba(0,0,0,.5);
+                color: rgba(102, 102, 102, .75);
             }
         }
         .fas {

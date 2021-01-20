@@ -59,6 +59,9 @@
         .fab {
             font-size: 28px;
         }
+        &:hover {
+            text-decoration: none;
+        }
     }
     a:nth-child(n+4) {
         margin-bottom: 0;

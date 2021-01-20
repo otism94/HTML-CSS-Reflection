@@ -1,3 +1,0 @@
-- .article content formatting requires media queries to account for differences in xs and sm viewports (currently only sm is correct)
-
-- article caption tooltips are cut off by the new box shadow-cutoff container

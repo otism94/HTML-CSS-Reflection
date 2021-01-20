@@ -13,38 +13,52 @@
 }
 
 .btn-support {
-    min-width: 144.61px;
-    max-height: 56px;
+    width: 144.61px;
+    height: 56px;
     color: $white;
     font-size: 18px;
     background-color: $btn-blue;
     margin-right: 20px;
+    font-weight: 400;
     &:hover {
         background-color: $btn-blue-hvr;
     }
-    .btn-support-content {
+    .btn-header-content {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         height: 100%;
+        .fas {
+            font-size: 20px;
+            padding: 3px 0 0 1px;
+        }
+        span {
+            padding-left: 16px;
+        }
     }
 }
 
 .btn-contact {
-    min-width: 152.42px;
-    max-height: 56px;
+    width: 152.42px;
+    height: 56px;
     color: $white;
     font-size: 18px;
     background-color: $btn-grey;
     margin-right: 20px;
+    font-weight: 400;
     &:hover {
         background-color: $btn-grey-hvr;
     }
-    .btn-support-content {
+    .btn-header-content {
         display: flex;
-        justify-content: space-between;
         align-items: center;
         height: 100%;
+        .fas {
+            font-size: 23px;
+            margin-left: -3px;
+        }
+        span {
+            padding-left: 12px;
+        }
     }
 }
 
@@ -57,12 +71,12 @@
     background-color: $btn-grey;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    color: $white;
     &:hover {
         cursor: pointer;
         background-color: $btn-grey-hvr;
     }
     @include mq('md') {
-        left: 0;
         border-radius: 3px;
     }
 }
@@ -77,8 +91,13 @@
 }
 
 .btn-banner {
+    width: 224.89px;
     background-color: $btn-purp;
     padding: 6px 19px;
+    .fas {
+        margin-left: 16px;
+        padding-right: 1px;
+    }
     &:hover {
         background-color: $btn-purp-hvr;
     }
@@ -90,13 +109,16 @@
         width: 129.73px;
         height: 47px;
     }
-    
 }
 
 .btn-about {
+    width: 173.2px;
     background-color: $btn-white;
     color: $primary-dark;
     padding: 6px 15px;
+    .fas {
+        padding: 0 1px;
+    }
     &:hover {
         background-color: $btn-white-hvr;
     }
