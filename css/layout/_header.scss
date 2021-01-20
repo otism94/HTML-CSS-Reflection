@@ -162,26 +162,27 @@ header {
     width: 400px;
     align-items: center;
     position: relative;
-    @include mq('md') {
+    @include mq('md') { // Displays this section in md viewports
         display: flex;
     }
-    @include mq('lg') {
+    @include mq('lg') { // Hides this section in lg viewports
         display: none;
     }
-    #search-toggle {
+    #search-toggle { // Hides the actual checkbox
         display: none;
     }
-    .buttons {
+    .buttons { // Container for the Support and Contact buttons
         display: flex;
         visibility: visible;
         opacity: 1;
         transition: opacity 1s;
     }
-    .search-bar {
+    .search-bar { // The actual search bar
         visibility: hidden;
         opacity: 0;
         transition: opacity 1s;
         position: absolute;
+        top: 0;
         left: 37px;
         width: 300px;
         input[type="search"] {
@@ -204,7 +205,7 @@ header {
             }
         }
     }
-    .btn-toggle {
+    .btn-toggle { // Button to toggle search bar on and off
         position: absolute;
         top: 0;
         left: 163px;
@@ -215,7 +216,7 @@ header {
             margin-left: 1px;
         }
     }
-    #search-toggle:checked {
+    #search-toggle:checked { // Hides/displays elements when the toggle button is pressed
         ~ .buttons {
             visibility: hidden;
             opacity: 0;
@@ -228,7 +229,7 @@ header {
     }
 }
 
-/* main-nav buttons (md viewports and above) */
+/* main-nav buttons (lg viewport only (they're inside .nav-search-md in md viewports)) */
 .nav-support,
 .nav-contact {
     display: none;
@@ -321,7 +322,6 @@ header {
 /* nav-bar (md viewports and wider) */
 .nav-bar {
     display: none;
-    
     @include mq('md') {
         display: block;
         width: 100%;
@@ -331,7 +331,7 @@ header {
     }
 }
 
-.nav-bar-content {
+.nav-bar-content { // Fixed-width content container
     width: 940px;
     position: relative;
     display: flex;
@@ -361,7 +361,7 @@ header {
     }
 }
 
-.nav-bar-tile {
+.nav-bar-tile { // Nav bar items
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -375,7 +375,7 @@ header {
     }
 }
 
-.nav-drop-down {
+.nav-drop-down { // Nav bar hover submenu
     display: none;
     @include nav-drop-down-colour($theme-colours-hvr);
     align-items: center;

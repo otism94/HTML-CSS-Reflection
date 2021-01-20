@@ -1,4 +1,4 @@
-// article and figure rules are in _news.scss
+// article rule is in _news.scss, fieldset rule is in _forms.scss
 
 * {
     box-sizing: border-box;
@@ -10,6 +10,13 @@ body {
     letter-spacing: .4px;
     color: $primary-grey;
     overflow-x: hidden;
+}
+
+h1 {
+    color: $white;
+    font-size: 3rem;
+    font-weight: 400;
+    text-transform: uppercase;
 }
 
 h2 {

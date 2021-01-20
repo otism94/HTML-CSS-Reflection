@@ -359,6 +359,13 @@ body {
   overflow-x: hidden;
 }
 
+h1 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
 h2 {
   color: #fff;
   font-size: 2.25rem;
@@ -1261,6 +1268,7 @@ header {
   -webkit-transition: opacity 1s;
   transition: opacity 1s;
   position: absolute;
+  top: 0;
   left: 37px;
   width: 300px;
 }
@@ -1328,7 +1336,7 @@ header {
   opacity: 1;
 }
 
-/* main-nav buttons (md viewports and above) */
+/* main-nav buttons (lg viewport only (they're inside .nav-search-md in md viewports)) */
 .nav-support,
 .nav-contact {
   display: none;
@@ -1880,8 +1888,7 @@ header {
   margin: -1px auto 0;
 }
 
-.banner-caption h2 {
-  font-size: 3rem;
+.banner-caption h1 {
   margin: 0 0 24px;
 }
 
