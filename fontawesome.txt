@@ -1,0 +1,17 @@
+support (mouse): <i class="fas fa-mouse"></i>
+contact (paper aeroplane): <i class="fas fa-paper-plane"></i>
+search (magnifying glass): <i class="fas fa-search"></i>
+burger (3 lines): <i class="fas fa-bars"></i>
+software (grid): <i class="fas fa-th"></i>
+design (angle brackets): <i class="fas fa-code"></i>
+it (monitor): <i class="fas fa-desktop"></i>
+telecoms/call (phone): <i class="fas fa-phone-alt"></i>
+marketing (chart): <i class="fas fa-chart-bar"></i>
+security (shield): <i class="fas fa-shield-alt"></i>
+training (grad cap): <i class="fas fa-graduation-cap"></i>
+
+facebook: <i class="fab fa-facebook-f"></i>
+twitter: <i class="fab fa-twitter"></i>
+linkedin: <i class="fab fa-linkedin-in"></i>
+
+right arrow: <i class="fas fa-arrow-right"></i>

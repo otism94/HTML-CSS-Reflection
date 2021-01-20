@@ -1,0 +1,5 @@
+- Clients section box shadow is different from mine
+- Client logos scale differently
+- Checkbox tick is antialiased differently
+- Social media link logos are slightly different sizes
+- Partner logos scale differently

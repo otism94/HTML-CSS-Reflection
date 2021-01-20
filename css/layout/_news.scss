@@ -1,0 +1,275 @@
+/* News banner container */
+.news-banner {
+    display: flex;
+    background-color: $white;
+    margin-top: 1px;
+    box-shadow: 0 3px 35px rgba(0,0,0,.1);
+    .news-banner-labels {
+        text-transform: uppercase;
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: $primary-dark;
+        @include mq('xs') {
+            margin-left: 15px;
+        }
+        @include mq('sm') {
+            flex-basis: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @include mq('md') {
+            flex-basis: 940px;
+        }
+        span {
+            display: inline-block;
+            padding: 40px 0 35px;
+            border-bottom: 5px solid $primary-dark;
+        }
+    }
+}
+
+/* Full width articles section container */
+.latest-articles {
+    @include mq('xs') {
+        padding: 50px 15px;
+    }
+    @include mq('sm') {
+        padding: 50px 0;
+    }
+}
+
+/* Section content container, specifically for tooltips */
+.articles-container {
+    position: relative;
+    margin: auto;
+    @include mq('sm') {
+        max-width: 720px;
+    }
+    @include mq('md') {
+        max-width: 940px;
+    }
+}
+
+/* Section content container */
+.articles-cutoff {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    margin: auto;
+    overflow: hidden;
+    @include mq('sm') {
+        max-width: 720px;
+    }
+    @include mq('md') {
+        max-width: 940px;
+    }
+}
+
+/* Article card container */
+.article {
+    border: 1px solid $accent;
+    border-radius: 3px;
+    box-shadow: 0 3px 35px rgba(0,0,0,.1);
+    @include newstype($theme-colours); // Colour theme based on article category
+    .author {
+        color: $primary-dark;
+        font-weight: 600;
+    }
+    @include mq('xs') { // Sets single-column layout in xs viewports
+        flex-basis: 100%;
+        margin-bottom: 30px;
+        .article-caption {
+            margin-top: 9px;
+            right: 0;
+        }
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    @include mq('sm') { // Sets two-column layout in sm viewports
+        flex-basis: 345px;
+        margin-bottom: 0;
+        &:first-child .article-caption {
+            position: absolute;
+            top: 10px;
+            left: 288px;
+        }
+        &:nth-child(0n+2) .article-caption {
+            position: absolute;
+            top: 10px;
+            left: 664px;
+        }
+        &:last-child { // Hides third article
+            display: none;
+        }
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // IE fix
+            flex-basis: 343px;
+        }
+    }
+    @include mq('md') {
+        flex-basis: 455px;
+        &:first-child .article-caption {
+            left: 398px;
+        }
+        &:nth-child(0n+2) .article-caption {
+            left: 884px;
+        }
+    }
+}
+
+/* Article figure/image */
+
+.article-fig {
+    background: $white;
+    margin: 0;
+    overflow: hidden;
+    @include mq('md') { // Ensures article image doesn't expand its container when hovered
+        height: 262.84px;
+    }
+}
+
+.article-img {
+    width: 100%;
+    border-bottom: 1px solid $accent;
+    transition: transform .25s, opacity .25s;
+    opacity: 1;
+    &:hover {
+        @include mq('md') {
+            transform-origin: center;
+            transform: scale(1.1);
+            opacity: .75;
+        }
+    }
+}
+
+/* Article category caption */
+.article-caption {
+    color: $white;
+    font-size: .75rem;
+    padding: 0 10px;
+    line-height: 1.438rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    z-index: 1;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Article caption tooltip positioning */
+/* This is the best solution I could come up without JS */
+.article-software .tooltip-box {
+    @include mq('xs') {
+        width: 143px;
+        height: 52px;
+        margin-left: -100px;
+        padding: 10px 17px;
+    }
+    @include mq('sm') {
+        width: 200px;
+        height: 52px;
+        margin-left: -100px;
+        padding: 10px 15px;
+    }
+}
+
+.article-it .tooltip-box {
+    @include mq('xs') {
+        width: 140px;
+        height: 52px;
+        margin-left: -97px;
+        padding: 10px 17px;
+    }
+    @include mq('sm') {
+        min-width: 140px;
+        width: calc((100vw - 720px) / 2 + 128px); // Stretch to scrollbar until 200px wide
+        padding: 10px 16.75px;
+        margin-left: -100px;
+    }
+    @include mq('md') {
+        width: calc((100vw - 940px) / 2 + 128px); // Stretch to scrollbar until 200px wide
+    }
+}
+
+.article-design .tooltip-box {
+    @include mq('xs') {
+        width: 142px;
+        margin-left: -99px;
+        padding: 10px 17px;
+    }
+}
+
+/* Article content */
+article {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    padding: 30px;
+    h4 {
+        font-weight: 600;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        @include mq('xs') {
+            margin: -4px 0 15px;
+            height: auto;
+        }
+        @include mq('sm') {
+            margin: -5px 0 15px;
+            height: 48px;
+        }
+        @include mq('md') {
+            margin: -1px 0 15px;
+        }
+    }
+    p {
+        line-height: 1.375rem;
+        font-size: .8125rem;
+        margin: 0 0 25px;
+        @include mq('md') {
+            margin: 0 0 47px;
+        }
+    }
+}
+
+/* Read More button */
+.btn-news {
+    @include newstype-hvr($theme-colours-hvr); // Hover colour based on article news category
+}
+
+/* Author and publish date information */
+.article-ftr {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid $accent;
+    padding-top: 30px;
+    margin-top: 30px;
+    .author-img {
+        flex: 0 0 47px;
+        display: flex;
+        align-items: center;
+        @include mq('xs') {
+            margin: -1px 0 0 0;
+        }
+        @include mq('sm') {
+            margin: 0;
+        }
+    }
+    .author-info {
+        display: flex;
+        align-items: center;
+        ul {
+            padding: 0;
+            @include mq('xs') {
+                margin: 0 0 0 20px;
+            }
+            @include mq('sm') {
+                margin: -2px 0 0 20px;
+            }
+        }
+        li {
+            font-size: .875rem;
+            line-height: 1.375rem;
+        }
+    }
+}
+

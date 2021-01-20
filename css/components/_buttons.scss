@@ -1,0 +1,114 @@
+.btn {
+    display: inline-block;
+    height: auto;
+    line-height: 35px;
+    padding: 5px 15px;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.063rem;
+    border-radius: 3px;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.btn-support {
+    min-width: 144.61px;
+    max-height: 56px;
+    color: $white;
+    font-size: 18px;
+    background-color: $btn-blue;
+    margin-right: 20px;
+    &:hover {
+        background-color: $btn-blue-hvr;
+    }
+    .btn-support-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+.btn-contact {
+    min-width: 152.42px;
+    max-height: 56px;
+    color: $white;
+    font-size: 18px;
+    background-color: $btn-grey;
+    margin-right: 20px;
+    &:hover {
+        background-color: $btn-grey-hvr;
+    }
+    .btn-support-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+    }
+}
+
+.btn-search {
+    position: absolute;
+    left: 174px;
+    width: 63px;
+    height: 100%;
+    padding: 15px;
+    background-color: $btn-grey;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    &:hover {
+        cursor: pointer;
+        background-color: $btn-grey-hvr;
+    }
+    @include mq('md') {
+        left: 0;
+        border-radius: 3px;
+    }
+}
+
+.btn-search-xs {
+    display: flex;
+    align-items: center;
+    padding: 0 8px 1px 0;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn-banner {
+    background-color: $btn-purp;
+    padding: 6px 19px;
+    &:hover {
+        background-color: $btn-purp-hvr;
+    }
+}
+
+.btn-card {
+    margin: auto auto 0;
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { // IE alignment fix
+        width: 129.73px;
+        height: 47px;
+    }
+    
+}
+
+.btn-about {
+    background-color: $btn-white;
+    color: $primary-dark;
+    padding: 6px 15px;
+    &:hover {
+        background-color: $btn-white-hvr;
+    }
+}
+
+.btn-subscribe {
+    background-color: $btn-dark;
+    color: $white;
+    padding: 6px 16px;
+    border: none;
+        &:hover {
+            background-color: $btn-dark-hvr;
+            cursor: pointer;
+        }
+}

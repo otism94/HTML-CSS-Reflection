@@ -1,0 +1,163 @@
+/* Main footer */
+.main-footer {
+    display: flex;
+    background-color: $primary-dark;
+    color: $white;
+    font-size: .8125rem;
+    line-height: 1.375rem;
+    > div {
+        margin: 0;
+        padding: 0;
+    }
+    h4 {
+        text-transform: uppercase;
+        height: 17px;
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0 0 28px;
+    }
+    ul {
+        padding: 0;
+        margin: 0 0 28px;
+    }
+    @include mq('xs') { // Sets single-column layout for xs viewports
+        flex-direction: column;
+        padding: 45px 15px 43px;
+    }
+    @include mq('sm') { // Sets two-column layout for sm viewports
+        flex-flow: row wrap;
+        padding: 45px 0 43px;
+        justify-content: center;
+        margin: auto;
+        > div {
+            flex-basis: 375px;
+            max-width: 375px; // IE fix
+            padding: 0 15px;
+        }
+    }
+    @include mq('md') {
+        > div {
+            flex-basis: 485px;
+            max-width: 485px;
+        }
+    }
+}
+
+/* Social media links sub-section */
+.ftr-socmed h4 {
+    padding-bottom: 23px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include social-links($socmed-colours); // Sets the hover state colours for each link
+    a {
+        display: flex;
+        justify-content: center;
+        .fab {
+            font-size: 28px;
+        }
+    }
+    a:nth-child(n+4) {
+        margin-bottom: 0;
+    }
+}
+
+.grid-gap { /* Sets a consistent gap between social media links without messy padding rules */
+    flex-basis: 30px;
+    max-width: 30px;
+}
+
+.empty-social { /* Ensures the social media links' top and bottom rows are consistent */
+    flex: 1 0 40%;
+    padding: 12.5px 0;
+}
+
+/* Partners section */
+.partners-section {
+    padding: 50px 0;
+    @include mq('xs') { // Hides section in xs viewports
+        display: none;
+    }
+    @include mq('sm') { // Displays section in sm viewports and wider
+        display: block;
+    }
+}
+
+.partners-list {
+    display: flex;
+    // justify-content: space-between;
+    max-width: 720px;
+    margin: auto;
+    div {
+        display: flex;
+        position: relative;
+        height: 88px;
+        padding: 0 20px;
+        &:first-child { // Sets a unique height for Google Partner image
+            img {
+                max-height: 82px;
+            }
+        }
+        img {
+            max-width: 100%;
+            max-height: 53.1px;
+            &:nth-child(n+2) { // Hides the coloured image, if there is one
+                position: absolute;
+                visibility: hidden;
+                left: 20px;
+                z-index: 2;
+            }
+        }
+        &:hover { // Displays the coloured image on hover, if there is one
+            img:nth-child(n+2) {
+                visibility: visible;
+                @include mq('md') {
+                    padding-right: 40px;
+                }
+            }
+        }
+    }
+    @include mq('md') {
+        max-width: 970px;
+        padding: 0 15px;
+        div:first-child {
+            margin: 0 13px;
+        }
+        div:nth-child(n+2) {
+            flex: 1 1 auto;
+            max-height: 100%;
+            img {
+                flex: 1 1 auto;
+                width: 100%;
+                max-height: 100%;
+            }
+        }
+        .microsoft {
+            height: 85.33px;
+            img {
+                height: 100%;
+            }
+        }
+        .future50 {
+            height: 110.09px;
+            img {
+                height: 100%;
+            }
+        }
+        .qms {
+            height: 99.39px;
+            img {
+                height: 100%;
+            }
+        }
+        .ncc {
+            height: 80.08px;
+            img {
+                height: 100%;
+            }
+        }
+    }
+}

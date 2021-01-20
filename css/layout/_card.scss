@@ -1,0 +1,107 @@
+/* Full-width section container */
+.cards-section {
+    @include mq('xs') {
+        padding: 50px 15px;
+    }
+    @include mq('sm') {
+        padding: 50px 0;
+    }
+}
+
+/* Content container */
+.cards-content {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    margin: auto;
+    @include mq('xs') {
+        width: 100%;
+    }
+    @include mq('sm') {
+        width: 750px;
+    }
+    @include mq('md') {
+        width: 970px;
+    }
+}
+
+.icon-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 23px;
+    width: 60px;
+    height: 60px;
+    border: 0px solid transparent;
+    border-radius: 50%;
+    margin: 0 auto 17px;
+}
+
+/* Cards */
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+    text-align: center;
+    color: $primary-dark;
+    background-color: $white;
+    border: 1px solid $accent;
+    border-radius: 3px;
+    padding: 30px;
+    box-shadow: 0 3px 35px rgba(0,0,0,.1);
+    @include cards($theme-colours); // Sets colour theme for each card
+    h3 {
+        font-size: 1.125rem;
+        margin: 0 0 13px;
+        font-weight: 400;
+    }
+    .line {
+        width: 28px;
+        height: 3px;
+        display: block;
+        background-color: $primary-dark;
+        margin: 0 auto;
+    }
+    p {
+        font-size: .8125rem;
+        line-height: 1.375rem;
+        margin: 11px 0 13px;
+        font-weight: 400;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+
+    @include mq('xs') { // Sets cards to be full-width in xs displays
+        flex: 1 1 100%;
+        max-width: 100%;
+        &:last-child { // Removes margin on last card
+            margin-bottom: 0;
+        }
+    }
+
+    @include mq('sm') { // Sets the multi-column cards layout in sm displays
+        max-width: 720px;
+        flex-basis: 720px;
+        padding: 30px;
+        margin-left: 15px;
+        margin-right: 15px;
+        &:nth-child(n+4) { // Displays last four cards over two columns
+            flex-basis: 345px;
+            max-width: 345px;
+        }
+        &:nth-child(n+6) { // Removes margin on bottom row
+            margin-bottom: 0;
+        }
+    }
+
+    @include mq('md') {
+        max-width: 293.33px;
+        flex-basis: 293.33px;
+        &:nth-child(n+4) {
+            flex-basis: 455px;
+            max-width: 455px;
+        }
+    }
+}

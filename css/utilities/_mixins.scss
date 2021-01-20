@@ -1,0 +1,175 @@
+// Media queries
+@mixin mq($break) {
+    $value: map-get($breakpoints, $break);
+    $sm: map-get($breakpoints, 'sm');
+    @if $value == null {
+      @warn "`#{$break}` is not a valid breakpoint name."
+    }
+    @else if $value < $sm {
+      @media (max-width: $value) {
+         @content;
+      }
+    }
+    @else {
+      @media (min-width: $value) {
+        @content;
+      }
+    }
+  }
+
+// Nav bar colours
+@mixin nav-bar-items($map) {
+    @each $itemtheme, $itemcolour in $theme-colours {
+        &-#{$itemtheme} {
+            .fas {
+                color: $itemcolour;
+            }
+            &:hover {
+                background-color: $itemcolour;
+                border-left-color: $itemcolour;
+                .fas {
+                    color: $white;
+                }
+                .nav-drop-down {
+                    display: flex;
+                }
+                .nav-sub-#{$itemtheme} {
+                    display: flex;
+                    margin-left: calc((100vw - 940px) / 2);
+                    a {
+                        &:hover {
+                            text-decoration: none;
+                        }
+                        &::after {
+                            content: "-";
+                            padding: 0 20px 0 24px;
+                        }
+                        &:last-child::after {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Nav hover drop down menu colours
+@mixin nav-drop-down-colour($map) {
+    @each $bgtheme, $bgcolour in $theme-colours-hvr {
+        &-#{$bgtheme} {
+            background-color: $bgcolour;
+        }
+    }
+}
+
+// Card colours
+@mixin cards($map) {
+    @each $cardtheme, $cardcolour in $theme-colours {
+        &-#{$cardtheme} {
+            .icon-card {
+                background-color: $cardcolour;
+            }
+            .fas {
+                color: $white;
+            }
+            .btn-card {
+                padding: 6px 16px;
+                color: $white;
+                background-color: $cardcolour;
+            }
+        }
+        &-#{$cardtheme}:hover {
+            color: $white;
+            background-color: $cardcolour;
+            .icon-card {
+                background-color: $white;
+            }
+            .fas {
+                color: $cardcolour;
+            }
+            .line {
+                background-color: $white;
+            }
+            .btn-card {
+                color: $cardcolour;
+                background-color: $white;
+            }
+        }
+    }
+}
+
+// News colours
+@mixin newstype($map) {
+    @each $newstheme, $newscolour in $theme-colours {
+        &-#{$newstheme} {
+            .article-caption {
+                background-color: $newscolour;
+            }
+            h4 {
+                color: $newscolour;
+            }
+            .btn-news-#{$newstheme} {
+                padding: 6px 16px;
+                color: $white;
+                background-color: $newscolour;
+            }
+        }
+    }
+}
+
+// News button hover state colours
+@mixin newstype-hvr($map) {
+    @each $hvrtheme, $hvrcolour in $theme-colours-hvr {
+        &-#{$hvrtheme}:hover {
+            background-color: $hvrcolour;
+        }
+    }
+}
+
+// Tooltip properties
+@mixin tooltip {
+    position: absolute;
+    display: inline-block;
+    .tooltip-box,
+    .tooltip-point {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        bottom: 100%;
+        left: 50%;
+        z-index: 2;
+    }
+    .tooltip-box {
+        background-color: $primary-dark;
+        color: $white;
+        text-transform: none;
+        font-weight: 400;
+        text-align: center;
+    }
+    .tooltip-point {
+        background: linear-gradient(-45deg, $primary-dark 45%, transparent 45%);
+        transform: rotate(45deg);
+    }
+    &:hover { // Displays the tooltip
+        .tooltip-box,
+        .tooltip-point {
+            visibility: visible;
+        }
+    }
+}
+
+// Social media colours
+@mixin social-links($map) {
+    @each $socialmedia, $smcolour in $socmed-colours {
+        .#{$socialmedia} {
+            flex: 1 0 40%;
+            background-color: rgba(0,0,0,.25);
+            padding: 13.5px 0;
+            margin-bottom: 30px;
+            &:hover {
+                background-color: $smcolour;
+            }
+        }
+    } 
+}

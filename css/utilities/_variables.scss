@@ -1,0 +1,58 @@
+// Fonts
+$font-stack: 'Poppins', 'Helvetica', 'Arial', sans-serif;
+
+// Media query breakpoints map
+$breakpoints: (
+    'xs': 767px,
+    'sm': 768px,
+    'md': 992px,
+    'lg': 1260px,
+);
+
+// Main colours
+$white: #fff;
+$primary-dark: #333645;
+$primary-darker: #22242e;
+$primary-light: #ddd;
+$primary-grey: #666;
+$primary-greyer: #454555;
+$accent: #ccc;
+
+// Button colours - could convert to maps for a mixin
+$btn-purp: #926fb1;
+$btn-purp-hvr: #7e57a0;
+$btn-blue: #4183d7;
+$btn-blue-hvr: #2a6ec6;
+$btn-grey: #999aa2;
+$btn-grey-hvr: #84858f;
+$btn-dark: #333645;
+$btn-dark-hvr: #22242e;
+$btn-white: #fff;
+$btn-white-hvr: #ebebeb;
+
+// Social media button colours
+$socmed-colours: (
+    'facebook': #3b5998,
+    'twitter': #00aced,
+    'linkedin': #0077b5,
+);
+
+// Card and news colours map
+$theme-colours: (
+    'software': #67809f,
+    'it': #4183d7,
+    'marketing': #2ecc71,
+    'telecoms': #d64541,
+    'design': #926fb1,
+    'security': #f62459,
+);
+
+// News button hover state colours
+$theme-colours-hvr: (
+    'software': #566c88,
+    'it': #2a6ec6,
+    'marketing': #25a25a,
+    'telecoms': #bc2c28,
+    'design': #7e57a0,
+    'security': #de093f,
+);

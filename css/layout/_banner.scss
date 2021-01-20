@@ -1,0 +1,61 @@
+// Banner full-width container
+.banner-section {
+    background: linear-gradient(to right, rgb(0,0,0), rgba(0,0,0,.45)),
+                url('../img/banner-image.jpeg') no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(51, 54, 69, .5);
+    @include mq('xs') {
+        min-height: 532px;
+        height: calc(100vh - 167px); // Viewport height - Header height(-1px border)
+    }
+    @include mq('sm') {
+        min-height: 590px;
+        height: calc(100vh - 109px); // Viewport height - header height(-1px border)
+    }
+    @include mq('md') {
+        min-height: 491px;
+        height: calc(100vh - 209px);
+        background: linear-gradient(to right, rgb(0,0,0), rgba(0,0,0,.45) 40%, transparent 75%), 
+                    url('../img/banner-image.jpeg') no-repeat top;
+        background-size: contain, cover;
+    }
+}
+
+// Banner content container
+.banner-content {
+    width: 100%;
+    @include mq('md') {
+        width: 940px;
+        margin: auto;
+    }
+}
+
+// Banner caption container
+.banner-caption {
+    color: $white;
+    text-align: center;
+    max-width: 90%;
+    margin: -1px auto 0;
+    h2 {
+        font-size: 3rem;
+        margin: 0 0 24px;
+    }
+    p {
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+        margin: 0 0 35px;
+        }
+    span {
+        line-height: 50px;
+        font-size: 1.25rem;
+    }
+    @include mq('md') {
+        text-align: left;
+        h2 {
+            margin-top: -2px;
+        }
+    }
+}

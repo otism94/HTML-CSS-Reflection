@@ -1,0 +1,23 @@
+FIREFOX
+- POTENTIALLY IGNORABLE: Dimensions of main-nav are different, which affects the size of the logo
+- POTENTIALLY IGNORABLE: Call button's bottom border is thinner than the Chrome version's
+- SOLVED: Search bar magnifying glass button displays outside of the input field
+- POTENTIALLY IGNORABLE: Search bar button is aligned differently (to be fixed with media query)
+- POTENTIALLY IGNORABLE: Original site's banner is smaller in Firefox
+- SOLVED: Banner caption is slightly misaligned
+- SOLVED: The newletter form checkbox disappears completely when clicked
+
+
+IE
+- SOLVED: Header is COMPLETELY BROKEN:
+   - SOLVED: Logo is massively stretched
+   - SOLVED: Call button doesn't seem to display at all or is hidden somewhere
+   - SOLVED: Burger button is cut off half way horizontally
+   - SOLVED: top-nav is completely misaligned
+- SOLVED: Search bar magnifying glass button displays outside of the input field
+- POTENTIALLY IGNORABLE: Search bar button is aligned differently (to be fixed with media query)
+- POTENTIALLY IGNORABLE: My banner caption actually works better than the actual site's does (?!)
+- SOLVED: News tooltips do not display on hover
+- SOLVED: The newletter form checkbox disappears completely when clicked
+- SOLVED: The checkbox can't accept custom formatting due to the appearance property being unsupported
+- SOLVED: Social media cards do not display correctly

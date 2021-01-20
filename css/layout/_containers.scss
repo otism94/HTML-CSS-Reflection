@@ -1,0 +1,40 @@
+// Containers for larger sections are in their respective scss files
+
+/* About section container */
+.about-section {
+    background-color: $primary-dark;
+    color: $white;
+    padding: 50px 15px;
+    h2 {
+        margin: -7px 0 27px;
+    }
+    p {
+        line-height: 1.875rem;
+        margin-bottom: 25px;
+    }
+    @include mq('sm') {
+        .about-content {
+            max-width: 720px;
+            margin: auto;
+        }
+    }
+    @include mq('md') {
+        background-image: url('../img/netmatters-logo-bg.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right;
+        .about-content {
+            max-width: 940px;
+        }
+    }
+}
+
+/* Newletter sign-up form container */
+.newsletter-section {
+    background-color: $primary-light;
+    padding-bottom: 26px;
+    h2 {
+        font-size: 2rem;
+        color: $primary-dark;
+    }
+}

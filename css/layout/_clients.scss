@@ -1,0 +1,53 @@
+/* Full-width section container */
+.clients-section {
+    background-color: $white;
+    padding: 50px 0;
+    box-shadow: inset 0 35px 35px -35px rgba(0,0,0,.125);
+    @include mq('xs') {
+        display: none;
+    }
+    @include mq('sm') {
+        display: block;
+        height: 146px;
+    }
+    @include mq('md') {
+        height: 162.83px;
+    }
+}
+
+/* Section content container */
+.clients-list {
+    display: flex;
+    max-width: 720px;
+    justify-content: space-between;
+    margin: auto;
+    div {
+        position: relative;
+        max-height: 45.11px;
+        img {
+            padding: 0 20px;
+            max-height: 45.11px;
+            &:last-child { // Hides the coloured image
+                position: absolute;
+                visibility: hidden;
+                left: 0;
+                z-index: 1;
+            }
+        }
+        &:hover { // Displays the coloured image on hover
+            img:last-child {
+                visibility: visible;
+            }
+        }
+    }
+    @include mq('md') {
+        max-width: 940px;
+        div {
+            max-height: 62.83px;
+            img {
+                max-height: 62.83px;
+            }
+        }
+    }
+}
+

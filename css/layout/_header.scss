@@ -1,0 +1,317 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 15px;
+    align-items: center;
+    @include mq('xs') {
+        padding: 20px 15px;
+    }
+    @include mq('sm') {
+        padding: 20px 0;
+    }
+    @include mq('md') {
+        padding: 20px 0 0;
+    }
+}
+
+/* Container for Netmatters logo and main-nav */
+.top-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    @include mq('xs') {
+        width: 100%;
+        max-width: 100%;
+    }
+    @include mq('sm') {
+        margin: auto;
+        width: 720px;
+        max-width: 720px;
+    }
+    @include mq('md') {
+        width: 940px;
+        max-width: 940px;
+    }
+}
+
+/* Netmatters logo */
+.header-img {
+    display: flex;
+    align-items: center;
+    img {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+    @include mq('xs') {
+        flex: 1 1 50%;
+        max-width: 402px;
+    }
+    @include mq('sm') {
+        flex: 1 1 50%;
+        max-width: 345px;
+        margin-bottom: auto;
+    }
+}
+
+/* All the nav items that aren't in the drop-down nav bar */
+.main-nav { 
+    display: flex;
+    @include mq('xs') {
+        justify-content: space-between;
+        flex: 1 0 148.03px;
+        max-width: 154.03px;
+        min-width: 148.03px;
+        width: 100%;
+        @media (min-width: 604px) and (-ms-high-contrast: active), (min-width: 604px) and (-ms-high-contrast: none) { // Fixes misalignment in IE at vw > 603px
+            position: absolute;
+            top: 27px;
+            right: 15px;
+        }
+    }
+    @include mq('sm') {
+        justify-content: flex-end;
+        flex-basis: 340.03px;
+        max-width: 340.03px;
+        padding: 7px 0;
+    }
+    @include mq('md') {
+        flex-basis: 565.83px;
+        max-width: 565.83px;
+    }
+}
+
+/* Phone call button (xs viewports only) */
+.nav-call {
+    @include mq('xs') {
+        display: flex;
+        flex-basis: 26px;
+        margin: 0 0 0 14px;
+        background: none;
+        align-items: center;
+        order: 1;
+        .fas {
+            font-size: 26px;
+            color: $primary-dark;
+            padding: 2px 3px 3px 4px;
+            border-bottom: 3px solid transparent;
+        }
+        &:hover {
+            cursor: pointer;
+            .fas {
+                color: $btn-dark-hvr;
+                border-bottom: 3px solid $btn-dark-hvr;
+            }
+        }
+    }
+    @include mq('sm') { // Hidden in sm viewports and wider
+        display: none;
+    }
+}
+
+.nav-search {
+    height: 56px;
+    position: relative;
+    .fas {
+        color: $white;
+        font-size: 23px;
+        margin-left: 1px;
+    }
+    input[type="search"] {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid $accent;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        transition: border .15s ease-in-out, box-shadow .15s ease-in-out;
+        padding: 5px 15px;
+        font-size: 14px;
+        color: $primary-grey;
+        &:focus {
+            outline: none;
+            border: 1px solid rgb(91,192,222);
+            box-shadow: 0px 0px 8px rgba(91,192,222,.6);
+        }
+        @include mq('xs') {
+            width: 174px;
+        }
+        @include mq('md') {
+            visibility: hidden;
+            width: 300px;
+            margin-left: -300px;
+        }
+    }
+    @include mq('xs') {
+        display: none;
+    }
+    @include mq('sm') {
+        display: inline-block;
+        order: 4;
+        width: 237px;
+    }
+    @include mq('md') {
+        width: 63px;
+    }
+}
+
+/* main-nav buttons (md viewports and above) */
+.nav-support,
+.nav-contact {
+    display: none;
+    @include mq('md') {
+        display: inline-block;
+    }
+}
+
+/* Burger button (functionally useless) */
+.nav-burger { 
+    display: flex;
+    justify-content: center;
+    flex-basis: 63.03px;
+    max-width: 63.03px; // fix for IE
+    max-height: 56px;
+    align-items: center;
+    margin-left: 20px;
+    padding: 3.5px 14.215px 7.5px; // no idea don't ask
+    background-color: $btn-dark;
+    color: $white;
+    font-size: .75rem;
+    line-height: 1;
+    order: 5;
+    letter-spacing: normal;
+    .burger-lines {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        width: 33px;
+        margin: 6px auto 8px;
+        .burger-line {
+            width: 33px;
+            height: 3px;
+            background-color: $white;
+            margin-bottom: 5px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    &:hover {
+        cursor: pointer;
+        background-color: $btn-dark-hvr;
+    }
+}
+
+/* Full-width search bar below top-nav (xs viewports only) */
+.nav-search-xs {
+    @include mq('xs') {
+        display: flex;
+        flex-flow: space-between;
+        flex: 0 0 100%;
+        order: 6;
+        max-width: 100%;
+        height: 47px;
+        background-color: rgba(0,0,0,.1);
+        border: 2px solid rgba(0,0,0,.1);
+        border-radius: 2px;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        align-items: center;
+        margin-top: 11px;
+        input[type="search"] {
+            background: none;
+            padding-left: 15px;
+            flex: 1 1 auto;
+            width: 80%;
+            max-width: 100%;
+            height: 43px;
+            border: none;
+            font-size: 14px;
+            color: $primary-grey;
+            &:focus {
+                outline: none;
+            }
+            &::placeholder {
+                color: rgba(0,0,0,.5);
+            }
+        }
+        .fas {
+            font-size: 20px;
+            color: $primary-dark;
+        }
+    }
+    @include mq('sm') { // Hidden in sm viewports and wider
+        display: none;
+    }
+}
+
+/* nav-bar (md viewports and wider) */
+.nav-bar {
+    display: none;
+    
+    @include mq('md') {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+        height: 99px;
+        background-color: $primary-dark;
+    }
+}
+
+.nav-bar-content {
+    width: 940px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    border-left: 1px solid hsla(0,0%,100%,.1);
+    border-right: 1px solid $primary-darker;
+    .nav-bar-item {
+        @include nav-bar-items($theme-colours);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 156.33px;
+        color: $white;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-align: center;
+        height: 99px;
+        border-left: 1px solid $primary-darker;
+        border-right: 1px solid hsla(0,0%,100%,.1);
+        span {
+            font-size: 10px;
+        }
+    }
+    .nav-sub {
+        display: none;
+    }
+}
+
+.nav-bar-tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 99px;
+    .fas {
+        font-size: 20px;
+        margin: 5px auto 8px;
+    }
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+.nav-drop-down {
+    display: none;
+    @include nav-drop-down-colour($theme-colours-hvr);
+    align-items: center;
+    position: absolute;
+    top: 99px;
+    left: 0;
+    width: 100vw;
+    height: 45px;
+    margin-left: calc((-2px - (100vw - 940px)) / 2); // I don't know why it needs the -2px, but it does
+    font-size: 13px;
+}
