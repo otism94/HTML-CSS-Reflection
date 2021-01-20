@@ -34,6 +34,10 @@ header {
         width: 940px;
         max-width: 940px;
     }
+    @include mq('lg') {
+        width: 1200px;
+        max-width: 1200px;
+    }
 }
 
 /* Netmatters logo */
@@ -359,6 +363,13 @@ header {
     .nav-sub {
         display: none;
     }
+    @include mq('lg') {
+        width: 1170px;
+        padding: 0;
+        .nav-bar-item {
+            width: 194.67px;
+        }
+    }
 }
 
 .nav-bar-tile { // Nav bar items
@@ -386,4 +397,7 @@ header {
     height: 45px;
     margin-left: calc((-2px - (100vw - 940px)) / 2); // I don't know why it needs the -2px, but it does
     font-size: 13px;
+    @include mq('lg') {
+        margin-left: calc((-2px - (100vw - 1170px)) / 2);
+    }
 }

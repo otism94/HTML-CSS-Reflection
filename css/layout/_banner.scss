@@ -6,7 +6,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-top: 1px solid rgba(51, 54, 69, .4);
+    // border-top: 1px solid rgba(51, 54, 69, .4);
+    border-top: 1px solid rgb(155, 158, 153);
     @include mq('xs') {
         min-height: 532px;
         height: calc(100vh - 167px); // Viewport height - Header height(-1px border)
@@ -31,6 +32,9 @@
         width: 940px;
         margin: auto;
     }
+    @include mq('lg') {
+        width: 1200px;
+    }
 }
 
 // Banner caption container
@@ -54,8 +58,11 @@
     @include mq('md') {
         text-align: left;
         margin-left: 0;
-        h2 {
+        h1 {
             margin-top: -2px;
         }
+    }
+    @include mq('lg') {
+        margin-left: 15px;
     }
 }
