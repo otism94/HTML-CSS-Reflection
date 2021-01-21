@@ -1,0 +1,150 @@
+/* Full-width section container */
+.newsletter-section {
+    background-color: $primary-light;
+    padding-bottom: 26px;
+    h2 {
+        text-transform: none;
+        margin-bottom: 10px;
+        line-height: 1.1;
+        font-size: 2rem;
+        color: $primary-dark;
+    }
+}
+
+/* Content container */
+.form-newsletter {
+    @include mq('xs') {
+        padding: 23px 45px 24px;
+    }
+    @include mq('sm') {
+        max-width: 720px;
+        padding: 23px 30px 24px;
+        margin: auto;
+    }
+    @include mq('md') {
+        max-width: 940px;
+        padding: 24px 30px 24px;
+    }
+    @include mq('lg') {
+        max-width: 1170px;
+    }
+}
+
+label { // Label font properties
+    font-weight: 600;
+    color: $primary-dark;
+    line-height: 32px;
+}
+
+.required { // Asterisk denoting required field
+    color: #d64541;
+}
+
+fieldset { // Removes default border and padding around fieldset element
+    border: none;
+    padding: 0;
+}
+
+.fieldset-newsletter { // Sets margin for newsletter form content
+    margin: 0 0 20px;
+}
+
+.signup-label { // Aligns label
+    margin-bottom: 5px;
+}
+
+/* Container for sign-up text fields */
+.newsletter-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    .name-field,
+    .email-field { // Sets width for individual text field containers
+        width: 100%;
+        @include mq('md') {
+            width: 425px;
+        }
+        @include mq('lg') {
+            width: 540px;
+        }
+    }
+    input[type="text"],
+    input[type="email"] { // Formats the text fields
+        width: 100%;
+        height: 47px;
+        padding: 5px 15px;
+        border: 1px solid $accent;
+        border-radius: 3px;
+        margin-bottom: 10px;
+        transition: border .15s ease-in-out, box-shadow .15s ease-in-out;
+        font-size: 14px;
+        color: #555;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+        &:focus {
+            outline: none;
+            border: 1px solid rgb(91,192,222);
+            box-shadow: 0px 0px 8px rgba(91,192,222,.6);
+        }
+    }
+}
+
+/* Checkbox and label */
+.marketing-box { // Container for checkbox and label
+    margin-top: 5px;
+    margin-bottom: 11px;
+    display: flex;
+}
+
+#marketing-optin { // Hides checked properties when unchecked
+    display: none;
+  }
+
+.marketing-label { // Text label
+    padding-left: 52px;
+    position: relative;
+    cursor: pointer;
+  }
+
+.marketing-label::before { // Checkbox
+    content: ""; 
+    width: 26px;
+    height: 26px;
+    border: 3px solid $primary-dark;
+    border-radius: 3px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+.marketing-label p { // Label paragraph
+    display: inline-block;
+    margin: 0;
+  }
+
+.marketing-label #marketing-optin:checked {
+    + p::before { // Checked background
+        content: "";
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        background-color: $primary-dark;
+        left: 0;
+        top: 0;
+        border-radius: 3px;
+    }
+    + p::after { // Checked tick
+        content: "";
+        display: block;
+        position: absolute;
+        width: 13px;
+        height: 5px;
+        border-left: 2.5px solid $white;
+        border-bottom: 2.5px solid $white;
+        transform: rotate(-45deg);
+        left: 8px;
+        top: 11px;
+        color: $white;
+    }
+}

@@ -28,7 +28,7 @@
     }
 }
 
-.icon-card {
+.icon-card { // Formats the icons
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,7 +75,6 @@
     &:hover {
         text-decoration: none;
     }
-
     @include mq('xs') { // Sets cards to be full-width in xs displays
         flex: 1 1 100%;
         max-width: 100%;
@@ -83,7 +82,6 @@
             margin-bottom: 0;
         }
     }
-
     @include mq('sm') { // Sets the multi-column cards layout in sm displays
         max-width: 720px;
         flex-basis: 720px;
@@ -98,7 +96,6 @@
             margin-bottom: 0;
         }
     }
-
     @include mq('md') {
         max-width: 293.33px;
         flex-basis: 293.33px;

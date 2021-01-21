@@ -1,4 +1,4 @@
-// Article category caption tooltip
+/* Article category caption tooltip */
 .tooltip-article {
     @include tooltip;
     .tooltip-box,
@@ -27,7 +27,7 @@
     }
 }
 
-// Client logo tooltip
+/* Client logo tooltip */
 .tooltip-client {
     @include tooltip;
     .tooltip-box {

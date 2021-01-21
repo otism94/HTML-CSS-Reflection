@@ -1,3 +1,4 @@
+/* Full-width section container */
 header {
     display: flex;
     justify-content: space-between;
@@ -292,6 +293,9 @@ header {
     &:hover {
         cursor: pointer;
         background-color: $btn-dark-hvr;
+        a {
+            text-decoration: none;
+        }
     }
 }
 

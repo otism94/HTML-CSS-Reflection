@@ -100,7 +100,7 @@
     background-color: $btn-purp;
     padding: 6px 19px;
     .fas {
-        margin-left: 16px;
+        margin: 0 -4px 0 16px;
         padding-right: 1px;
     }
     &:hover {
@@ -122,6 +122,7 @@
     color: $primary-dark;
     padding: 6px 15px;
     .fas {
+        margin: 0 -4px 0 12px;
         padding: 0 1px;
     }
     &:hover {

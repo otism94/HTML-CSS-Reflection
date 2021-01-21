@@ -4,8 +4,7 @@
 
 // Utilities
 @import 'utilities/variables',
-        'utilities/mixins',
-        'utilities/helpers';
+        'utilities/mixins';
         
 // Base Styles     
 @import 'base/reset',
@@ -14,14 +13,14 @@
 // Component Styles
 @import 'components/buttons',
         'components/forms',
-        'components/images',
         'components/tooltips';
 
 // Layout Styles
-@import 'layout/containers',
-        'layout/header',
+@import 'layout/header',
         'layout/banner',
         'layout/card',
+        'layout/about',
         'layout/news',
         'layout/clients',
+        'layout/newsletter',
         'layout/footer';
