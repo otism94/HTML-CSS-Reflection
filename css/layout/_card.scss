@@ -23,6 +23,9 @@
     @include mq('md') {
         width: 970px;
     }
+    @include mq('lg') {
+        width: 1230px;
+    }
 }
 
 .icon-card {
@@ -102,6 +105,15 @@
         &:nth-child(n+4) {
             flex-basis: 455px;
             max-width: 455px;
+        }
+    }
+    @include mq('lg') {
+        max-width: 370px;
+        flex-basis: 370px;
+        &:nth-child(n+4) {
+            max-width: 270px;
+            flex-basis: 270px;
+            margin-bottom: 0;
         }
     }
 }

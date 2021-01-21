@@ -21,6 +21,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
         max-width: 940px;
         padding: 24px 30px 24px;
     }
+    @include mq('lg') {
+        max-width: 1170px;
+    }
     h2 {
         text-transform: none;
         margin-bottom: 10px;
@@ -60,6 +63,9 @@ fieldset {
         width: 100%;
         @include mq('md') {
             width: 425px;
+        }
+        @include mq('lg') {
+            width: 540px;
         }
     }
     input[type="text"],

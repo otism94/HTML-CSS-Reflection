@@ -33,7 +33,7 @@
         margin: auto;
     }
     @include mq('lg') {
-        width: 1200px;
+        width: 1170px;
     }
 }
 
@@ -61,8 +61,5 @@
         h1 {
             margin-top: -2px;
         }
-    }
-    @include mq('lg') {
-        margin-left: 15px;
     }
 }

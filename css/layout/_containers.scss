@@ -27,6 +27,15 @@
             max-width: 940px;
         }
     }
+    @include mq('lg') {
+        background-size: contain;
+        .about-content {
+            max-width: 1170px;
+            p {
+                max-width: 570px;
+            }
+        }
+    }
 }
 
 /* Newletter sign-up form container */

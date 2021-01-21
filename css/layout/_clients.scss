@@ -13,6 +13,9 @@
     @include mq('md') {
         height: 162.83px;
     }
+    @include mq('lg') {
+        height: 170px;
+    }
 }
 
 /* Section content container */
@@ -46,6 +49,15 @@
             max-height: 62.83px;
             img {
                 max-height: 62.83px;
+            }
+        }
+    }
+    @include mq('lg') {
+        max-width: 1135px;
+        div {
+            max-height: 70px;
+            img {
+                max-height: 70px;
             }
         }
     }

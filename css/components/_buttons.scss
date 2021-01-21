@@ -79,6 +79,11 @@
     @include mq('md') {
         border-radius: 3px;
     }
+    @include mq('lg') {
+        left: 240px;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
 }
 
 .btn-search-xs {
