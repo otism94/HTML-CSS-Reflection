@@ -154,7 +154,11 @@ header {
         &::placeholder {
             color: rgba(102, 102, 102, .75);
         }
+        @include mq('md') {
+            display: none;
+        }
         @include mq('lg') {
+            display: inline-block;
             width: 240px;
         }
     }
@@ -167,92 +171,91 @@ header {
         width: 237px;
     }
     @include mq('md') {
-        display: none;
+        width: 63px;
     }
     @include mq('lg') {
-        display: inline-block;
         width: 303px;
     }
 }
 
 /* Toggleable search bar for md viewports */
-.nav-search-md {
-    display: none;
-    width: 400px;
-    align-items: center;
-    position: relative;
-    @include mq('md') { // Displays this section in md viewports
-        display: flex;
-    }
-    @include mq('lg') { // Hides this section in lg viewports
-        display: none;
-    }
-    #search-toggle { // Hides the actual checkbox
-        display: none;
-    }
-    .buttons { // Container for the Support and Contact buttons
-        display: flex;
-        visibility: visible;
-        opacity: 1;
-        transition: opacity 1s;
-    }
-    .search-bar { // The actual search bar
-        visibility: hidden;
-        opacity: 0;
-        transition: opacity 1s;
-        position: absolute;
-        top: 0;
-        left: 37px;
-        width: 300px;
-        input[type="search"] {
-            width: 100%;
-            height: 56px;
-            border: 1px solid $accent;
-            border-radius: 2px;
-            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-            transition: border .15s ease-in-out, box-shadow .15s ease-in-out;
-            padding: 5px 15px;
-            font-size: 14px;
-            color: $primary-grey;
-            &:focus {
-                outline: none;
-                border: 1px solid rgb(91,192,222);
-                box-shadow: 0px 0px 8px rgba(91,192,222,.6);
-            }
-            &::placeholder {
-                color: rgba(102, 102, 102, .75);
-            }
-        }
-    }
-    .btn-toggle { // Button to toggle search bar on and off
-        position: absolute;
-        top: 0;
-        left: 163px;
-        height: 56px;
-        .fas {
-            color: $white;
-            font-size: 23px;
-            margin-left: 1px;
-        }
-    }
-    #search-toggle:checked { // Hides/displays elements when the toggle button is pressed
-        ~ .buttons {
-            visibility: hidden;
-            opacity: 0;
-        }
-        ~ .search-bar {
-            display: inline-block;
-            visibility: visible;
-            opacity: 1;
-        }
-    }
-}
+// .nav-search-md {
+//     display: none;
+//     width: 400px;
+//     align-items: center;
+//     position: relative;
+//     @include mq('md') { // Displays this section in md viewports
+//         display: flex;
+//     }
+//     @include mq('lg') { // Hides this section in lg viewports
+//         display: none;
+//     }
+//     #search-toggle { // Hides the actual checkbox
+//         display: none;
+//     }
+//     .buttons { // Container for the Support and Contact buttons
+//         display: flex;
+//         visibility: visible;
+//         opacity: 1;
+//         transition: opacity 1s;
+//     }
+//     .search-bar { // The actual search bar
+//         visibility: hidden;
+//         opacity: 0;
+//         transition: opacity 1s;
+//         position: absolute;
+//         top: 0;
+//         left: 37px;
+//         width: 300px;
+//         input[type="search"] {
+//             width: 100%;
+//             height: 56px;
+//             border: 1px solid $accent;
+//             border-radius: 2px;
+//             box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+//             transition: border .15s ease-in-out, box-shadow .15s ease-in-out;
+//             padding: 5px 15px;
+//             font-size: 14px;
+//             color: $primary-grey;
+//             &:focus {
+//                 outline: none;
+//                 border: 1px solid rgb(91,192,222);
+//                 box-shadow: 0px 0px 8px rgba(91,192,222,.6);
+//             }
+//             &::placeholder {
+//                 color: rgba(102, 102, 102, .75);
+//             }
+//         }
+//     }
+//     .btn-toggle { // Button to toggle search bar on and off
+//         position: absolute;
+//         top: 0;
+//         left: 163px;
+//         height: 56px;
+//         .fas {
+//             color: $white;
+//             font-size: 23px;
+//             margin-left: 1px;
+//         }
+//     }
+//     #search-toggle:checked { // Hides/displays elements when the toggle button is pressed
+//         ~ .buttons {
+//             visibility: hidden;
+//             opacity: 0;
+//         }
+//         ~ .search-bar {
+//             display: inline-block;
+//             visibility: visible;
+//             opacity: 1;
+//         }
+//     }
+// }
 
 /* main-nav buttons (lg viewport only (they're inside .nav-search-md in md viewports)) */
 .nav-support,
 .nav-contact {
     display: none;
-    @include mq('lg') {
+    @include mq('md') {
         display: inline-block;
     }
 }

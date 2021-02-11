@@ -78,6 +78,7 @@
     }
     @include mq('md') {
         border-radius: 3px;
+        left: 0;
     }
     @include mq('lg') {
         left: 240px;

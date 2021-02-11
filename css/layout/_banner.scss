@@ -30,7 +30,6 @@
     width: 100%;
     @include mq('md') {
         width: 940px;
-        margin: auto;
     }
     @include mq('lg') {
         width: 1170px;
@@ -39,6 +38,7 @@
 
 // Banner caption container
 .banner-caption {
+    width: 100%;
     color: $white;
     text-align: center;
     max-width: 90%;

@@ -5,6 +5,8 @@
 
 body {
     font-family: $font-stack;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     font-size: 1rem;
     letter-spacing: .4px;
     color: $primary-grey;
