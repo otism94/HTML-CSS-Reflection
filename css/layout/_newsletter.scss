@@ -118,13 +118,13 @@ fieldset { // Removes default border and padding around fieldset element
     top: 0;
   }
 
-.marketing-label p { // Label paragraph
+.marketing-label span { // Label paragraph
     display: inline-block;
     margin: 0;
   }
 
 .marketing-label #marketing-optin:checked {
-    + p::before { // Checked background
+    + span::before { // Checked background
         content: "";
         position: absolute;
         width: 32px;
@@ -134,7 +134,7 @@ fieldset { // Removes default border and padding around fieldset element
         top: 0;
         border-radius: 3px;
     }
-    + p::after { // Checked tick
+    + span::after { // Checked tick
         content: "";
         display: block;
         position: absolute;

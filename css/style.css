@@ -2881,12 +2881,12 @@ fieldset {
   top: 0;
 }
 
-.marketing-label p {
+.marketing-label span {
   display: inline-block;
   margin: 0;
 }
 
-.marketing-label #marketing-optin:checked + p::before {
+.marketing-label #marketing-optin:checked + span::before {
   content: "";
   position: absolute;
   width: 32px;
@@ -2897,7 +2897,7 @@ fieldset {
   border-radius: 3px;
 }
 
-.marketing-label #marketing-optin:checked + p::after {
+.marketing-label #marketing-optin:checked + span::after {
   content: "";
   display: block;
   position: absolute;
